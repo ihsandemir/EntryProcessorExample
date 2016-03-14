@@ -1,0 +1,24 @@
+Compiling C++ client:
+
+rm -rf build
+mkdir build
+cd build
+cmake -DHAZELCAST_INSTALL_DIR=<hazelcast install dir> 
+make
+
+<hazelcast install dir> is where the hazelcast c++ client library is unzipped. It has folders like Linux_64, Linux_32, etc.
+
+The build will generate a binary named mapentryprocessor . Just run this binary to connect to the server. You may need to add network config for the server members if the member server and the client are not on the same machine (i.e. in the main.cpp add 
+	    hazelcast::client::Address addr("172.16.0.5", 5701);
+	    config.addAddress(addr);
+).
+
+For java server side, just do:
+	mvn clean compile
+	mvn exec:java -Dexec.mainClass="Member" 
+
+
+
+
+
+
