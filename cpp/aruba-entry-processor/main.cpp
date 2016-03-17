@@ -40,8 +40,6 @@ public:
 
 int main() {
     hazelcast::client::ClientConfig config;
-    hazelcast::client::Address addr("172.16.0.5", 5701);
-    config.addAddress(addr);
     hazelcast::client::HazelcastClient hz(config);
 
     hazelcast::client::IMap<std::string, Employee> employees = hz.getMap<std::string, Employee>("employees");

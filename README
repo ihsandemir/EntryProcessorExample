@@ -1,9 +1,10 @@
 Compiling C++ client:
 
+When inside EntryProcessorExample/cpp/aruba-entry-processor:
 rm -rf build
 mkdir build
 cd build
-cmake -DHAZELCAST_INSTALL_DIR=<hazelcast install dir> 
+cmake .. -DHAZELCAST_INSTALL_DIR=<hazelcast install dir> 
 make
 
 <hazelcast install dir> is where the hazelcast c++ client library is unzipped. It has folders like Linux_64, Linux_32, etc.

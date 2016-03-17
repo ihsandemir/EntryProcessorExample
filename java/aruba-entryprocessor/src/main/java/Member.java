@@ -23,7 +23,7 @@ public class Member {
             Employee value = entry.getValue();
             value.incSalary(10);
             entry.setValue(value);
-            return null;
+            return value.getSalary();
         }
 
         @Override
